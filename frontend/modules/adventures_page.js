@@ -52,8 +52,8 @@ function filterByDuration(list, low, high) {
   // TODO: MODULE_FILTERS
   // 1. Filter adventures based on Duration and return filtered list
   let filteredList = list.filter((adventure)=>{
-    return (low<=adventure.duration && adventure.duration<=high)
-  })
+    return low<=adventure.duration && adventure.duration<=high
+  });
   return filteredList;
 }
 
@@ -117,9 +117,11 @@ function getFiltersFromLocalStorage() {
   // TODO: MODULE_FILTERS
   // 1. Get the filters from localStorage and return String read as an object
   let filter = JSON.parse(localStorage.getItem("filters"));
+  if(filter !== null){
   document.getElementById("duration-select").value = filter.duration;
   return filter;
-
+  }
+  else return null;
 }
 
 //Implementation of DOM manipulation to add the following filters to DOM :
