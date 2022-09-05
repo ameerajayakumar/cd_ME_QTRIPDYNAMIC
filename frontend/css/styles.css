@@ -241,6 +241,7 @@ input[type="number"] {
   white-space: nowrap;
   border-radius: 20px;
   cursor: pointer;
+  border:none;
 }
 .reservation-visit-button:hover {
   background-color: rgb(226, 129, 1);
